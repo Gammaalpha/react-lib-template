@@ -1,16 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from "./TestComponent.module.css";
+import "./TestComponent.module.scss";
 export interface ITestComponentProp {
     key: number;
     text: string;
 }
 
-
-const styleCustom = {
-    color: "white",
-    backgroundColor: "green"
-}
 export class TestComponent extends React.Component<ITestComponentProp> {
     static propTypes = {
         key: PropTypes.number,
@@ -23,7 +18,7 @@ export class TestComponent extends React.Component<ITestComponentProp> {
     }
     render() {
         return (
-            <div style={styleCustom}>
+            <div className="tableComponent">
                 TestComponent: { this.props.key} {this.props.text}
             </div >
         )
