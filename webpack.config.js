@@ -7,7 +7,7 @@ module.exports = {
   devtool: "inline-source-map",
   output: {
     path: path.resolve(__dirname, "build"),
-    libraryTarget:"commonjs2",
+    libraryTarget: "commonjs2",
     filename: "index.js"
   },
   resolve: {
@@ -19,7 +19,7 @@ module.exports = {
         // Include ts, tsx, js, and jsx files.
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        loader: ["babel-loader","ts-loader"]
+        loader: ["babel-loader", "ts-loader"]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
@@ -29,12 +29,13 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          'style-loader',
+          "style-loader",
           // Translates CSS into CommonJS
-          'css-loader',
+          "css-loader",
           // Compiles Sass to CSS
-          'sass-loader',
+          { loader: "sass-loader", options: { sourceMap: true } }
         ],
+        include: /\.module\.scss$/
       },
       { test: /\.css$/, use: ["style-loader", "css-loader"] }
     ]
