@@ -11,7 +11,11 @@ module.exports = {
     filename: "index.js"
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json", ".scss", ".css"]
+    extensions: [".ts", ".tsx", ".js", ".json", ".scss", ".css"],
+    alias: {
+      react: path.resolve("./node_modules/react"),
+      "react-dom": path.resolve("./node_modules/react-dom")
+    }
   },
   module: {
     rules: [
@@ -33,12 +37,26 @@ module.exports = {
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
-          { loader: "sass-loader", options: { sourceMap: true } }
+          "sass-loader"
         ],
         include: /\.module\.scss$/
       },
       { test: /\.css$/, use: ["style-loader", "css-loader"] }
     ]
+  },
+  externals: {
+    react: {
+      root: "React",
+      commonjs2: "react",
+      commonjs: "react",
+      amd: "react"
+    },
+    "react-dom": {
+      root: "ReactDOM",
+      commonjs2: "react-dom",
+      commonjs: "react-dom",
+      amd: "react-dom"
+    }
   },
   plugins: []
 };
