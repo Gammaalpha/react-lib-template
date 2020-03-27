@@ -14,9 +14,9 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "prepublish": "rm -rf build/ && tsc",
     "webpack:dev": "npx webpack --config webpack.config.js",
     "build-wp": "rm -rf build/ && webpack --mode production",
+    "publish": "rm -rf build/ && webpack --mode production && sh deploy.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
