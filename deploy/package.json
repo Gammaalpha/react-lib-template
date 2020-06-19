@@ -1,0 +1,23 @@
+{
+  "name": "react-lib-template",
+  "version": "1.0.0",
+  "description": "React template built with Material UI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gammaalpha/react-enhanced-table.git"
+  },
+  "keywords": [
+    "React",
+    "Material-UI"
+  ],
+  "author": "Faiq Malik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gammaalpha/react-lib-template/issues"
+  },
+  "homepage": "https://github.com/Gammaalpha/react-lib-template#readme"
+}

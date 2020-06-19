@@ -1,4 +1,4 @@
-set -e
+# set -e
 
 yarn build-wp
 
@@ -8,9 +8,11 @@ mkdir production
 
 cd production
 
-cp ../dist prod -r
+cp ../build prod -r
 
-# cp ../{package.json,.gitignore,.npmignore} ./
+cp ../{.gitignore,.npmignore} ./
+
+cp ../deploy/* ./ -r
 
 git init
 
@@ -18,7 +20,7 @@ git add -A
 
 git commit -m "deploy"
 
-git push -f git@github.com:Gammaalpha/react-lib-template.git master:production
+git push -f git@github.com:Gammaalpha/react-enhanced-table.git master:production
 
 cd ..
 
